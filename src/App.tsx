@@ -22,6 +22,8 @@ import PublicFormBewertungen from '@/pages/public/PublicForm_Bewertungen';
 // <public:imports>
 // </public:imports>
 // <custom:imports>
+const SitzungPlanenPage = lazy(() => import('@/pages/intents/SitzungPlanenPage'));
+const BewertungsrundePage = lazy(() => import('@/pages/intents/BewertungsrundePage'));
 // </custom:imports>
 
 export default function App() {
@@ -49,6 +51,8 @@ export default function App() {
                 <Route path="bewertungen/:id" element={<BewertungenDetailPage />} />
                 <Route path="admin" element={<AdminPage />} />
                 {/* <custom:routes> */}
+                <Route path="intents/sitzung-planen" element={<Suspense fallback={null}><SitzungPlanenPage /></Suspense>} />
+                <Route path="intents/bewertungsrunde" element={<Suspense fallback={null}><BewertungsrundePage /></Suspense>} />
                 {/* </custom:routes> */}
               </Route>
             </Routes>

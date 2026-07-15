@@ -31,7 +31,7 @@ export function SitzungenDetails({
   erfahrungsraumFormateList,
   onOpenErfahrungsraumFormate,
   teilnehmerList,
-  onOpenTeilnehmer,
+  onOpenTeilnehmer: _onOpenTeilnehmer,
   bewertungenList,
   onOpenBewertungen,
   onAddBewertungen,
