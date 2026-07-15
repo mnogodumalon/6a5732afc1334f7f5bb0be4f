@@ -1,0 +1,8 @@
+- Teilnehmer (teilnehmer): vorname[string/text], nachname[string/text], organisation[string/text], rolle[string/text], email[string/email], telefon[string/tel], notizen[string/textarea]
+- Erfahrungsraum-Formate (erfahrungsraum_formate): name[string/text], beschreibung[string/textarea], zielsetzung[string/textarea], zielgruppe[string/text], methodik[lookup/select], weitere_methoden[string/text], dauer_stunden[number], max_teilnehmer[number], status[lookup/radio], materialien[file], anmerkungen[string/textarea]
+- Sitzungen (sitzungen): titel[string/text], erfahrungsraum[applookup/select], datum_uhrzeit[date/datetimeminute], moderator_nachname[string/text], teilnehmer[multipleapplookup/select], agenda[string/textarea], nachbereitungsnotizen[string/textarea], dokumente[file], ort_bezeichnung[string/text], strasse[string/text], hausnummer[string/text], postleitzahl[string/text], stadt[string/text], standort[geo], moderator_vorname[string/text]
+  → erfahrungsraum links to app_id 6a573287887b7fd750dcce20
+  → teilnehmer links to app_id 6a5732837233ac731b9d8400
+- Bewertungen (bewertungen): sitzung[applookup/select], teilnehmer[applookup/select], bewertungsdatum[date/date], gesamteindruck[lookup/radio], relevanz[lookup/radio], umsetzbarkeit[lookup/radio], methodenqualitaet[lookup/radio], wichtigste_erkenntnis[string/textarea], naechste_schritte[string/textarea], verbesserungsvorschlaege[string/textarea], weiterempfehlung[bool]
+  → sitzung links to app_id 6a573288cd157e1946410884
+  → teilnehmer links to app_id 6a5732837233ac731b9d8400

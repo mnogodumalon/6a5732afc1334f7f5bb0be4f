@@ -1,0 +1,47 @@
+{
+  "TeilnehmerDialog.tsx": {
+    "vorname": "z. B. Maria",
+    "nachname": "z. B. Schmidt",
+    "organisation": "z. B. Universität Köln",
+    "rolle": "z. B. Projektleiter",
+    "email": "z. B. maria@example.com",
+    "notizen": "Besonderheiten, Kontaktvorlieben..."
+  },
+  "ErfahrungsraumFormateDialog.tsx": {
+    "name": "z. B. Design Thinking Workshop",
+    "beschreibung": "Worum geht es hier? Was wird gelernt oder erarbeitet?",
+    "zielsetzung": "Was soll am Ende erreicht sein?",
+    "zielgruppe": "z. B. Führungskräfte, Team-Leiter",
+    "methodik": "Wähle eine Methodik",
+    "weitere_methoden": "z. B. Brainstorming, Diskussion",
+    "dauer_stunden": "z. B. 4",
+    "max_teilnehmer": "z. B. 12",
+    "anmerkungen": "Raumausstattung, Material, Spezialwünsche..."
+  },
+  "SitzungenDialog.tsx": {
+    "titel": "z. B. Leadership Workshop Köln",
+    "erfahrungsraum": "Welches Format führst du durch?",
+    "datum_uhrzeit": "Wann findet die Sitzung statt?",
+    "moderator_nachname": "z. B. Schmidt",
+    "moderator_vorname": "z. B. Peter",
+    "teilnehmer": "Wer nimmt teil?",
+    "agenda": "Ablaufplan, Themen, Zeiten...",
+    "nachbereitungsnotizen": "Notizen, Ergebnisse, Feedback...",
+    "ort_bezeichnung": "z. B. Seminarraum A",
+    "strasse": "z. B. Hauptstraße",
+    "hausnummer": "z. B. 42",
+    "postleitzahl": "z. B. 50937",
+    "stadt": "z. B. Köln"
+  },
+  "BewertungenDialog.tsx": {
+    "sitzung": "Welche Sitzung wird bewertet?",
+    "teilnehmer": "Wer bewertet?",
+    "bewertungsdatum": "Wann wurde bewertet?",
+    "wichtigste_erkenntnis": "Was hast du gelernt? Was wird dir bleiben?",
+    "naechste_schritte": "Wie setzt du das um? Konkrete nächste Schritte...",
+    "verbesserungsvorschlaege": "Was könnte besser laufen?",
+    "gesamteindruck": "Wie ist dein Gesamteindruck?",
+    "relevanz": "Wie relevant für deine Situation?",
+    "umsetzbarkeit": "Lassen sich die Erkenntnisse umsetzen?"
+  }
+}

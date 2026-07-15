@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "forms": [
+    {
+      "entity": "teilnehmer",
+      "app_id": "6a5732837233ac731b9d8400",
+      "path": "/rest/apps/6a5732837233ac731b9d8400/records",
+      "allowed_fields": [
+        "vorname",
+        "nachname",
+        "organisation",
+        "rolle",
+        "email",
+        "telefon",
+        "notizen"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Teilnehmer — Formular"
+    },
+    {
+      "entity": "erfahrungsraum_formate",
+      "app_id": "6a573287887b7fd750dcce20",
+      "path": "/rest/apps/6a573287887b7fd750dcce20/records",
+      "allowed_fields": [
+        "name",
+        "beschreibung",
+        "zielsetzung",
+        "zielgruppe",
+        "methodik",
+        "weitere_methoden",
+        "dauer_stunden",
+        "max_teilnehmer",
+        "status",
+        "anmerkungen"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Erfahrungsraum-Formate — Formular"
+    },
+    {
+      "entity": "sitzungen",
+      "app_id": "6a573288cd157e1946410884",
+      "path": "/rest/apps/6a573288cd157e1946410884/records",
+      "allowed_fields": [
+        "titel",
+        "datum_uhrzeit",
+        "moderator_nachname",
+        "teilnehmer",
+        "agenda",
+        "nachbereitungsnotizen",
+        "ort_bezeichnung",
+        "strasse",
+        "hausnummer",
+        "postleitzahl",
+        "stadt",
+        "standort",
+        "moderator_vorname"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Sitzungen — Formular"
+    },
+    {
+      "entity": "bewertungen",
+      "app_id": "6a573289304dfda38cab4969",
+      "path": "/rest/apps/6a573289304dfda38cab4969/records",
+      "allowed_fields": [
+        "bewertungsdatum",
+        "gesamteindruck",
+        "relevanz",
+        "umsetzbarkeit",
+        "methodenqualitaet",
+        "wichtigste_erkenntnis",
+        "naechste_schritte",
+        "verbesserungsvorschlaege",
+        "weiterempfehlung"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Bewertungen — Formular"
+    }
+  ]
+}

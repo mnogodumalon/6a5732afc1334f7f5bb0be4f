@@ -1,0 +1,28 @@
+{
+  "entities": {
+    "Teilnehmer": {
+      "placeholders_set": 6,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten-Entity (Kontaktinformationen). Keine Number-Felder, keine Applookup-Felder mit Preis-Targets, keine zeitbasierten Berechnungen. fieldOrder mit Vorname+Nachname als Paar."
+    },
+    "Erfahrungsraum-Formate": {
+      "placeholders_set": 9,
+      "defaults_keys": ["status"],
+      "computed_keys": [],
+      "reason": "Metadaten für Workshop-Formate. Number-Felder (dauer_stunden, max_teilnehmer) sind Struktur-Properties, nicht aggregierbar. Status-Default='aktiv' für neue Formate. fieldOrder mit dauer+max_teilnehmer nebeneinander."
+    },
+    "Sitzungen": {
+      "placeholders_set": 13,
+      "defaults_keys": ["datum_uhrzeit"],
+      "computed_keys": [],
+      "reason": "Event-Entity (zeitbasiert). Keine Preise, Multiplikationen oder Aggregationen. datum_uhrzeit=today mit withTime=true für Event-Erfassung heute. fieldOrder mit Moderator-Pair, Address-Pairs und Textareas am Ende."
+    },
+    "Bewertungen": {
+      "placeholders_set": 9,
+      "defaults_keys": ["bewertungsdatum", "weiterempfehlung"],
+      "computed_keys": [],
+      "reason": "Feedback-Entity mit Rating-Lookups (nicht numerisch aggregierbar). bewertungsdatum=today für Feedback-Datum. weiterempfehlung=true (optimistischer Default für Nutzersignale). fieldOrder: Applookups, dann Ratings, dann Textareas."
+    }
+  }
+}
