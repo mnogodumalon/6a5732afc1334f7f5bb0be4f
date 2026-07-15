@@ -37,6 +37,12 @@ import {
   ChartSkeleton,
   type ChartRow,
 } from '@/components/widgets/ChartWidget';
+import {
+  MapWidget,
+  MapSkeleton,
+  type MapMarker,
+  type MapTone,
+} from '@/components/widgets/MapWidget';
 
 const APPGROUP_ID = '6a5732afc1334f7f5bb0be4f';
 const REPAIR_ENDPOINT = '/claude/build/repair';
@@ -148,6 +154,29 @@ export default function DashboardOverview() {
       fetchAll();
     }
   };
+
+  // Map markers — Sitzungen mit Standort
+  const mapMarkers = useMemo<MapMarker[]>(() => {
+    return enrichedSitzungen.flatMap(s => {
+      const geo = s.fields.standort;
+      if (!geo) return [];
+      let tone: MapTone = 'primary';
+      try {
+        if (s.fields.datum_uhrzeit && isBefore(parseISO(s.fields.datum_uhrzeit), startOfDay(clock))) {
+          tone = 'default';
+        }
+      } catch { /* */ }
+      return [{
+        id: `sitzung:${s.record_id}`,
+        lat: geo.lat,
+        long: geo.long,
+        title: s.fields.titel ?? s.erfahrungsraumName ?? 'Sitzung',
+        subtitle: [s.fields.ort_bezeichnung, s.fields.stadt].filter(Boolean).join(', ') || geo.info,
+        tone,
+        icon: 'calendar' as const,
+      }];
+    });
+  }, [enrichedSitzungen, clock]);
 
   // Chart rows for Gesamteindruck
   const bewertungenRows = useMemo<ChartRow<typeof enrichedBewertungen[number]>[]>(() => {
@@ -285,6 +314,22 @@ export default function DashboardOverview() {
               />
             ) : (
               <ChartSkeleton />
+            )}
+            {mapMarkers.length > 0 ? (
+              <MapWidget
+                markers={mapMarkers}
+                onMarkerClick={m => {
+                  const rid = m.id.split(':')[1];
+                  const rec = sitzungen.find(s => s.record_id === rid);
+                  if (rec) overlay.replace({ type: 'sitzung', record: rec });
+                }}
+                legend={[
+                  { label: 'Bevorstehend', tone: 'primary', icon: 'calendar' },
+                  { label: 'Vergangen', tone: 'default', icon: 'calendar' },
+                ]}
+              />
+            ) : (
+              <MapSkeleton />
             )}
           </>
         }
